@@ -30,7 +30,7 @@ An additive explanation of the scoring margin: ranked point costs and offsets re
 
 ## Brand Commitments
 
-The name is “How did we lose?”. The user likes the Apple-style interaction work but has rejected the generic dashboard appearance and asked for a design skill from an acclaimed GitHub repository to be saved and implemented. Retain the useful interaction quality while changing the composition and visual character.
+The name is “How did we lose?”. The user likes the Apple-style interaction work but has rejected the generic dashboard appearance and asked for a design skill from an acclaimed GitHub repository to be saved and implemented. Retain the useful interaction quality while changing the composition and visual character. The user selected the sports editorial study on 2026-11-03; its score strip, signed point-impact chart and running gap are the approved direction.
 
 ## Evidence on Hand
 

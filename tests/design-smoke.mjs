@@ -60,15 +60,16 @@ try {
   await page.locator(".factor-card").first().waitFor();
   const firstId = new URL(page.url()).searchParams.get("game");
   const firstCount = counts.get(`${base}/api/games/${firstId}`);
-  await page.locator(".game-card.selected").click();
+  const picker = page.getByLabel("NBA game", { exact: true });
+  await picker.selectOption(firstId);
   assert.equal(
     await page.locator(".scoreboard").count(),
     1,
     "Clicking the selected game keeps the current view",
   );
-  await page.locator(".game-card").nth(1).click();
+  await picker.selectOption({ index: 1 });
   await page.locator(".factor-card").first().waitFor();
-  await page.locator(".game-card").first().click();
+  await picker.selectOption(firstId);
   await page.locator(".factor-card").first().waitFor();
   assert.equal(
     counts.get(`${base}/api/games/${firstId}`),
@@ -100,8 +101,8 @@ try {
   await factor.locator("input[type=range]").fill("50");
   await page.locator(".scenario-dock").waitFor({ state: "visible" });
   assert.notEqual(
-    await page.locator(".whatif-result strong").first().innerText(),
-    "+0.0",
+    await page.locator(".point-balance > div > strong").last().innerText(),
+    "12.0",
   );
   await page.screenshot({
     path: "test-results/mobile-scenario.png",
@@ -110,7 +111,7 @@ try {
   await page.locator(".scenario-dock button").click();
   await page.locator(".scenario-dock").waitFor({ state: "detached" });
 
-  const opener = page.getByRole("button", { name: /How it works/ });
+  const opener = page.getByRole("button", { name: /How does a box score become points/ });
   await opener.click();
   await waitForSheet();
   await audit("Mobile sheet");
@@ -150,7 +151,7 @@ try {
   await page.getByRole("dialog").waitFor({ state: "visible" });
   await page.keyboard.press("Escape");
   await page.getByRole("dialog").waitFor({ state: "detached" });
-  await page.locator("h1").click();
+  await page.evaluate(() => { if (document.activeElement instanceof HTMLElement) document.activeElement.blur(); });
   await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
   await page.screenshot({
     path: "test-results/mobile-dark.png",

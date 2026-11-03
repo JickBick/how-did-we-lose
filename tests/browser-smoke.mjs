@@ -16,28 +16,30 @@ try {
 
   await page.goto(`${base}/?date=2025-06-22&game=401766128&team=11`, { waitUntil: 'networkidle' });
   await page.locator('.factor-card').first().waitFor();
-  assert.match(await page.locator('.result-pill').innerText(), /LOST BY 12/);
+  assert.match(await page.locator('.result-pill').innerText(), /lost by 12/i);
   assert.equal(await page.locator('.scores').innerText(), '91\n–\n103');
   const hurtCard = page.locator('.factor-card.hurts').first();
   await hurtCard.locator('.factor-main').click();
   await hurtCard.getByRole('button', { name: /Close the full gap/ }).click();
-  assert.notEqual(await page.locator('.whatif-result strong').first().innerText(), '+0.0');
+  assert.equal(await page.locator('.point-balance > div > strong').last().innerText(), '2.4');
+  assert.match(await page.locator('.balance-block').innerText(), /Adjusted advantage/);
+  assert.match(await page.locator('.factor-card').last().locator('.running-gap').innerText(), /2.4/);
   await page.getByRole('button', { name: 'Reset what-if scenario' }).click();
-  assert.equal(await page.locator('.whatif-result strong').first().innerText(), '+0.0');
+  assert.equal(await page.locator('.point-balance > div > strong').last().innerText(), '12.0');
   await page.getByRole('button', { name: 'Box score', exact: true }).click();
   assert.equal(await page.locator('tbody tr').count(), 13);
-  await page.locator('.team-toggle button').filter({ hasText: 'Thunder' }).click();
+  await page.getByLabel('Your team', { exact: true }).selectOption('25');
   await page.getByRole('button', { name: /The breakdown 8/ }).click();
-  assert.match(await page.locator('.result-pill').innerText(), /WON BY 12/);
-  assert.match(await page.locator('.analysis-title h2').innerText(), /edge|win/i);
-  await page.getByRole('button', { name: /How it works/ }).click();
+  assert.match(await page.locator('.result-pill').innerText(), /won by 12/i);
+  assert.match(await page.locator('.answer h2').innerText(), /edge|win/i);
+  await page.getByRole('button', { name: /How it adds up/ }).click();
   await page.getByRole('dialog').waitFor({ state: 'visible' });
   await page.keyboard.press('Escape');
   await page.getByRole('dialog').waitFor({ state: 'detached' });
   assert.match(page.url(), /team=25/);
   await page.reload({ waitUntil: 'networkidle' });
   await page.locator('.factor-card').first().waitFor();
-  assert.match(await page.locator('.result-pill').innerText(), /WON BY 12/);
+  assert.match(await page.locator('.result-pill').innerText(), /won by 12/i);
 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.screenshot({ path: 'test-results/mobile.png', fullPage: true });

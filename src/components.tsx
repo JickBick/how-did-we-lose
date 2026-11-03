@@ -13,23 +13,12 @@ const spring = { type: "spring" as const, stiffness: 450, damping: 43 };
 export function GamesSkeleton() {
   return (
     <div
-      className="game-rail skeleton-rail"
+      className="games-skeleton"
       role="status"
       aria-label="Loading NBA games"
       aria-busy="true"
     >
-      {[0, 1, 2, 3, 4, 5, 6].map((n) => (
-        <div className="game-card skeleton-game" key={n} aria-hidden="true">
-          <span className="skeleton skeleton-label" />
-          {[0, 1].map((row) => (
-            <div className="skeleton-team" key={row}>
-              <span className="skeleton skeleton-circle" />
-              <span className="skeleton skeleton-abbreviation" />
-              <span className="skeleton skeleton-score" />
-            </div>
-          ))}
-        </div>
-      ))}
+      <span className="skeleton" aria-hidden="true" />
       <span className="sr-only">Loading NBA games</span>
     </div>
   );
@@ -43,41 +32,19 @@ export function AnalysisSkeleton() {
       aria-label="Loading box score"
       aria-busy="true"
     >
-      <div className="skeleton-perspective">
-        <span className="skeleton" />
-        <span className="skeleton" />
+      <div className="skeleton-scoreboard" aria-hidden="true">
+        <span className="skeleton skeleton-logo" />
+        <span className="skeleton skeleton-score" />
+        <span className="skeleton skeleton-logo" />
       </div>
-      <div className="panel skeleton-scoreboard" aria-hidden="true">
-        <div className="skeleton-team-big">
-          <span className="skeleton skeleton-circle" />
-          <span className="skeleton" />
-        </div>
-        <span className="skeleton skeleton-result" />
-        <div className="skeleton-team-big">
-          <span className="skeleton skeleton-circle" />
-          <span className="skeleton" />
-        </div>
-      </div>
-      <div className="skeleton-factor-heading skeleton" aria-hidden="true" />
-      <div className="skeleton-factor-grid" aria-hidden="true">
-        <div className="panel">
-          {[0, 1, 2].map((n) => (
-            <div className="skeleton-factor" key={n}>
-              <span className="skeleton skeleton-circle" />
-              <div>
-                <span className="skeleton" />
-                <span className="skeleton" />
-              </div>
-              <span className="skeleton skeleton-cost" />
-            </div>
-          ))}
-        </div>
-        <div className="panel skeleton-summary">
+      <div className="skeleton-answer skeleton" aria-hidden="true" />
+      {[0, 1, 2, 3, 4, 5, 6, 7].map((n) => (
+        <div className="skeleton-row" key={n} aria-hidden="true">
           <span className="skeleton" />
           <span className="skeleton" />
           <span className="skeleton" />
         </div>
-      </div>
+      ))}
       <span className="sr-only">Loading the game and its point breakdown.</span>
     </div>
   );
@@ -172,7 +139,6 @@ export function Methodology({ onClose }: { onClose: () => void }) {
           <span />
         </div>
         <div className="dialog-heading">
-          <span className="eyebrow">The methodology</span>
           <button
             className="icon-button"
             title="Close explanation"
