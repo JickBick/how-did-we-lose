@@ -2,6 +2,8 @@
 
 **The box score, explained.** A small NBA app that turns live and final box scores into a ranked explanation of the scoring margin.
 
+**[Open the live app on Railway](https://web-production-d45b8.up.railway.app)**
+
 Pick a date, game and team. See the biggest point costs, the things that helped, and an accounting that adds up to the actual margin. Expand a factor to see the math or close 0–100% of the gap in an interactive what-if scenario. Share a link to the same game and perspective.
 
 ## Run locally
@@ -37,6 +39,8 @@ railway domain --service web
 
 For automatic deploys, connect this GitHub repository to the `web` service in Railway and select `main`. The Dockerfile is detected automatically. Deployment needs no environment variables beyond Railway’s injected `PORT`.
 
+The live instance was deployed through the Railway CLI. GitHub automatic deployment is not connected. To update the linked production service from this checkout, run `railway up --service web --environment production --ci`.
+
 ## Data
 
 The server reads ESPN’s public, unauthenticated NBA scoreboard and game-summary endpoints. This is an unofficial integration: ESPN provides no availability guarantee, and the endpoints or data shape may change. Responses are cached in memory, requests are coalesced, and upstream requests time out after 10 seconds. Cache storage is bounded. On upstream failure, a previously fetched response less than 24 hours old is returned with an explicit `stale` flag and timestamp. There is no synthetic/demo data silently substituted for real games.
@@ -68,5 +72,11 @@ The full eight factors add to the scoreboard margin within floating-point precis
 ## Checks
 
 Tests cover 2,000 randomized score reconciliations, perspective symmetry, zero-attempt games, double-count prevention, live score/stat mismatch handling, upstream normalization, cache behavior, input validation and feed failures.
+
+The browser smoke check also exercises the real feed, what-if sliders, team switching, box score, shared links, mobile layout and empty dates. With Chrome installed:
+
+```sh
+TEST_URL=https://web-production-d45b8.up.railway.app node tests/browser-smoke.mjs
+```
 
 Built with React, TypeScript, Vite and Express. Fonts: DM Sans and Barlow Condensed (self-hosted). Team logos and game data are supplied by ESPN. This project is independent of the NBA and ESPN.
