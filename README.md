@@ -83,3 +83,9 @@ TEST_URL=https://web-production-d45b8.up.railway.app node tests/design-smoke.mjs
 Built with React, TypeScript, Vite and Express. The interface uses the platform system font, flat surfaces, and interruptible spring interactions through Motion. It supports dark mode, reduced motion, reduced transparency, and increased contrast. Team logos and game data are supplied by ESPN. This project is independent of the NBA and ESPN.
 
 The design pass uses the user-provided Apple interaction brief and the [UI Deslopify skill](https://github.com/AntonioSpagnol/UI-Deslopify-Skill). Loading placeholders match the game and analysis layout. On mobile, the methodology opens as a draggable sheet and a compact what-if balance stays visible while a scenario is active.
+
+## Saved design skill and direction studies
+
+[Impeccable](https://github.com/pbakaus/impeccable) is saved in `.agents/skills/impeccable`, pinned to commit `9fadc41729c38fd47d7ae622b501558653f9d2e9`. Its original Apache-2.0 license and source metadata are included. `AGENTS.md` points future interface work to the saved skill, and `PRODUCT.md` records the confirmed product brief.
+
+`design-previews/` contains three proposed layouts—sports editorial, Apple Sports, and analytics desk—using the same real Pacers–Thunder game. The HTML studies, desktop/mobile captures and capture provenance are saved for comparison. They are design previews, not a replacement production interface; dates and team controls illustrate their placement while the sample game stays fixed.

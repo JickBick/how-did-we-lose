@@ -1,0 +1,17 @@
+{
+  "tool": "Impeccable 4.8.0 source detector",
+  "scope": "design-previews HTML studies",
+  "run_on": "2026-11-03",
+  "initial_findings": 19,
+  "corrections": [
+    "Raised preview and comparison UI text sized 10\u201311px to 12px.",
+    "Corrected editorial low-contrast axis text.",
+    "Replaced the default cream background with cool paper.",
+    "Reserved plot-label space on the editorial phone layout."
+  ],
+  "retained_advisories": [
+    "Table and divider alignment warnings were reviewed against the rendered captures; these are aligned rules around native table sections, with visible text inset by the cells and parent layout.",
+    "Apple game-band tabs meet the lower band edge intentionally, retaining the native selected-tab baseline."
+  ],
+  "note": "Visual design studies; a chosen direction still requires implementation and the full production review."
+}

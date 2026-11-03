@@ -1,0 +1,258 @@
+{
+  "game": {
+    "id": "401766128",
+    "date": "2025-06-23T00:00Z",
+    "state": "post",
+    "status": "Final",
+    "teams": [
+      {
+        "id": "11",
+        "name": "Indiana Pacers",
+        "shortName": "Pacers",
+        "abbreviation": "IND",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+        "color": "#002d62",
+        "score": 91,
+        "homeAway": "away",
+        "stats": {
+          "fgm": 29,
+          "fga": 70,
+          "tpm": 11,
+          "tpa": 28,
+          "ftm": 22,
+          "fta": 29,
+          "orb": 12,
+          "turnovers": 23,
+          "drb": 33,
+          "rebounds": 45,
+          "assists": 17,
+          "steals": 6,
+          "blocks": 4,
+          "fouls": 24
+        }
+      },
+      {
+        "id": "25",
+        "name": "Oklahoma City Thunder",
+        "shortName": "Thunder",
+        "abbreviation": "OKC",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+        "color": "#007ac1",
+        "score": 103,
+        "homeAway": "home",
+        "stats": {
+          "fgm": 35,
+          "fga": 87,
+          "tpm": 11,
+          "tpa": 40,
+          "ftm": 22,
+          "fta": 31,
+          "orb": 13,
+          "turnovers": 8,
+          "drb": 27,
+          "rebounds": 40,
+          "assists": 20,
+          "steals": 14,
+          "blocks": 8,
+          "fouls": 23
+        }
+      }
+    ],
+    "note": "NBA Finals - Game 7",
+    "venue": "Paycom Center",
+    "sourceUrl": "https://www.espn.com/nba/boxscore/_/gameId/401766128"
+  },
+  "us": {
+    "id": "11",
+    "name": "Indiana Pacers",
+    "shortName": "Pacers",
+    "abbreviation": "IND",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+    "color": "#002d62",
+    "score": 91,
+    "homeAway": "away",
+    "stats": {
+      "fgm": 29,
+      "fga": 70,
+      "tpm": 11,
+      "tpa": 28,
+      "ftm": 22,
+      "fta": 29,
+      "orb": 12,
+      "turnovers": 23,
+      "drb": 33,
+      "rebounds": 45,
+      "assists": 17,
+      "steals": 6,
+      "blocks": 4,
+      "fouls": 24
+    }
+  },
+  "opponent": {
+    "id": "25",
+    "name": "Oklahoma City Thunder",
+    "shortName": "Thunder",
+    "abbreviation": "OKC",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+    "color": "#007ac1",
+    "score": 103,
+    "homeAway": "home",
+    "stats": {
+      "fgm": 35,
+      "fga": 87,
+      "tpm": 11,
+      "tpa": 40,
+      "ftm": 22,
+      "fta": 31,
+      "orb": 13,
+      "turnovers": 8,
+      "drb": 27,
+      "rebounds": 40,
+      "assists": 20,
+      "steals": 14,
+      "blocks": 8,
+      "fouls": 23
+    }
+  },
+  "analysis": {
+    "factors": [
+      {
+        "id": "turnovers",
+        "title": "Taking care of the ball",
+        "points": 14.375615763546797,
+        "comparison": "23 vs 8 turnovers",
+        "explanation": "Each extra turnover is allocated one lost shot opportunity, valued at the teams’ average 0.96 points per field-goal attempt. This is an opportunity estimate; any mismatch is included in possession balance.",
+        "formula": "(Our turnovers − their turnovers) × average points per FGA"
+      },
+      {
+        "id": "threes",
+        "title": "Three-point shooting",
+        "points": -11.931613300492609,
+        "comparison": "39.3% vs 27.5% from three",
+        "explanation": "Compare three-point accuracy at the two teams’ shared shot volume and three-point share. IND went 11/28; OKC went 11/40.",
+        "formula": "3 × difference in 3P% × average 3-point share × average FGA"
+      },
+      {
+        "id": "twos",
+        "title": "Two-point shooting",
+        "points": 7.34564511057541,
+        "comparison": "42.9% vs 51.1% inside the arc",
+        "explanation": "Compare finishing inside the arc at shared shot volume and shot mix. IND made 18/42 twos; OKC made 24/47.",
+        "formula": "2 × difference in 2P% × average 2-point share × average FGA"
+      },
+      {
+        "id": "line",
+        "title": "Getting to the line",
+        "points": 1.4682981090100111,
+        "comparison": "29 vs 31 free-throw attempts",
+        "explanation": "Compare actual free-throw opportunities at the teams’ shared conversion rate of 73.4%. Fouls don’t all lead to free throws, so foul counts aren’t assigned additional points.",
+        "formula": "Difference in FTA × average FT%"
+      },
+      {
+        "id": "freeThrows",
+        "title": "Free-throw shooting",
+        "points": -1.468298109010009,
+        "comparison": "75.9% vs 71.0% at the line",
+        "explanation": "Isolate free-throw accuracy using the teams’ shared number of attempts. IND made 22/29; OKC made 22/31.",
+        "formula": "Difference in FT% × average FTA"
+      },
+      {
+        "id": "rebounds",
+        "title": "Offensive rebounding",
+        "points": 0.9583743842364532,
+        "comparison": "12 vs 13 offensive rebounds",
+        "explanation": "An extra offensive board is allocated one extra shot opportunity at 0.96 points per attempt. Defensive and total rebounds are shown in the box score but aren’t added again. Not every rebound produces a shot; the balance factor reconciles that.",
+        "formula": "(Their offensive rebounds − ours) × average points per FGA"
+      },
+      {
+        "id": "balance",
+        "title": "Possession balance",
+        "points": 0.9583743842364532,
+        "comparison": "70 vs 87 total field-goal attempts",
+        "explanation": "The remaining shot-attempt difference after offensive boards and turnovers. It balances trips ending in free throws, period-end possessions, team rebounds and other timing effects. A box score cannot separate these exactly.",
+        "formula": "(FGA difference − offensive-board difference − turnover disadvantage) × average points per FGA"
+      },
+      {
+        "id": "shotMix",
+        "title": "Twos vs. threes",
+        "points": 0.29360365789749643,
+        "comparison": "40.0% vs 46.0% of shots were threes",
+        "explanation": "A three is worth more, but is usually harder to make. This isolates shot selection using shared two- and three-point accuracy. It is separate from how well either team shot.",
+        "formula": "Difference in 3-point share × (3 × average 3P% − 2 × average 2P%) × average FGA"
+      }
+    ],
+    "hurt": [
+      {
+        "id": "turnovers",
+        "title": "Taking care of the ball",
+        "points": 14.375615763546797,
+        "comparison": "23 vs 8 turnovers",
+        "explanation": "Each extra turnover is allocated one lost shot opportunity, valued at the teams’ average 0.96 points per field-goal attempt. This is an opportunity estimate; any mismatch is included in possession balance.",
+        "formula": "(Our turnovers − their turnovers) × average points per FGA"
+      },
+      {
+        "id": "twos",
+        "title": "Two-point shooting",
+        "points": 7.34564511057541,
+        "comparison": "42.9% vs 51.1% inside the arc",
+        "explanation": "Compare finishing inside the arc at shared shot volume and shot mix. IND made 18/42 twos; OKC made 24/47.",
+        "formula": "2 × difference in 2P% × average 2-point share × average FGA"
+      },
+      {
+        "id": "line",
+        "title": "Getting to the line",
+        "points": 1.4682981090100111,
+        "comparison": "29 vs 31 free-throw attempts",
+        "explanation": "Compare actual free-throw opportunities at the teams’ shared conversion rate of 73.4%. Fouls don’t all lead to free throws, so foul counts aren’t assigned additional points.",
+        "formula": "Difference in FTA × average FT%"
+      },
+      {
+        "id": "rebounds",
+        "title": "Offensive rebounding",
+        "points": 0.9583743842364532,
+        "comparison": "12 vs 13 offensive rebounds",
+        "explanation": "An extra offensive board is allocated one extra shot opportunity at 0.96 points per attempt. Defensive and total rebounds are shown in the box score but aren’t added again. Not every rebound produces a shot; the balance factor reconciles that.",
+        "formula": "(Their offensive rebounds − ours) × average points per FGA"
+      },
+      {
+        "id": "balance",
+        "title": "Possession balance",
+        "points": 0.9583743842364532,
+        "comparison": "70 vs 87 total field-goal attempts",
+        "explanation": "The remaining shot-attempt difference after offensive boards and turnovers. It balances trips ending in free throws, period-end possessions, team rebounds and other timing effects. A box score cannot separate these exactly.",
+        "formula": "(FGA difference − offensive-board difference − turnover disadvantage) × average points per FGA"
+      },
+      {
+        "id": "shotMix",
+        "title": "Twos vs. threes",
+        "points": 0.29360365789749643,
+        "comparison": "40.0% vs 46.0% of shots were threes",
+        "explanation": "A three is worth more, but is usually harder to make. This isolates shot selection using shared two- and three-point accuracy. It is separate from how well either team shot.",
+        "formula": "Difference in 3-point share × (3 × average 3P% − 2 × average 2P%) × average FGA"
+      }
+    ],
+    "helped": [
+      {
+        "id": "threes",
+        "title": "Three-point shooting",
+        "points": -11.931613300492609,
+        "comparison": "39.3% vs 27.5% from three",
+        "explanation": "Compare three-point accuracy at the two teams’ shared shot volume and three-point share. IND went 11/28; OKC went 11/40.",
+        "formula": "3 × difference in 3P% × average 3-point share × average FGA"
+      },
+      {
+        "id": "freeThrows",
+        "title": "Free-throw shooting",
+        "points": -1.468298109010009,
+        "comparison": "75.9% vs 71.0% at the line",
+        "explanation": "Isolate free-throw accuracy using the teams’ shared number of attempts. IND made 22/29; OKC made 22/31.",
+        "formula": "Difference in FT% × average FTA"
+      }
+    ],
+    "gap": 12,
+    "totalHurt": 25.39991140950262,
+    "totalHelp": 13.399911409502618
+  },
+  "source": "https://www.espn.com/nba/boxscore/_/gameId/401766128",
+  "fetchedAt": "2026-11-03T06:45:00.051Z"
+}

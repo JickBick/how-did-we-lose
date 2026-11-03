@@ -1,0 +1,45 @@
+{
+  "capturedAt": "2026-11-03T07:15:12.382Z",
+  "gameId": "401766128",
+  "records": [
+    {
+      "direction": "editorial",
+      "source": "editorial.html",
+      "desktop": {
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "width": 390,
+        "fullPage": true
+      },
+      "provenance": "Screenshot of the local HTML design study in Chrome, with real ESPN game 401766128 data."
+    },
+    {
+      "direction": "apple",
+      "source": "apple.html",
+      "desktop": {
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "width": 390,
+        "fullPage": true
+      },
+      "provenance": "Screenshot of the local HTML design study in Chrome, with real ESPN game 401766128 data."
+    },
+    {
+      "direction": "analytics",
+      "source": "analytics.html",
+      "desktop": {
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "width": 390,
+        "fullPage": true
+      },
+      "provenance": "Screenshot of the local HTML design study in Chrome, with real ESPN game 401766128 data."
+    }
+  ]
+}

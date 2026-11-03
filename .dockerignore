@@ -6,3 +6,6 @@ dist-server
 .railway
 test-results
 playwright-report
+.agents
+.impeccable
+design-previews

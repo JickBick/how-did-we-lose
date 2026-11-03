@@ -1,0 +1,49 @@
+{
+  "title": "Three ways to read the game",
+  "question": "Same Pacers–Thunder game, same point estimates. Choose the layout you would want to use.",
+  "options": [
+    {
+      "id": "analytics",
+      "kind": "assigned",
+      "label": "Analytics desk",
+      "thesis": "Every factor and the running balance in one working view.",
+      "palette": ["#111a24", "#243447", "#f3f6f8", "#64b9b1"],
+      "materials": ["compact tables", "hairline panel seams", "tabular figures"],
+      "viewport": "Game and score at left, the ranked impact table in the center, and the point ledger at right.",
+      "risk": "More information to scan; less relaxed on a small phone.",
+      "html": ".impeccable/mocks/decision/analytics.html",
+      "htmlFrame": "1440x900",
+      "comp": ".impeccable/mocks/decision/analytics.png"
+    },
+    {
+      "id": "editorial",
+      "kind": "pick",
+      "label": "Sports editorial",
+      "thesis": "The result and the biggest causes lead, with a chart you can read at a glance.",
+      "palette": ["#172638", "#f4f6f7", "#bc412c", "#2f745e"],
+      "materials": ["strong score typography", "compact ruled data", "signed point-impact bars"],
+      "viewport": "A compact score strip leads into a wide factor chart with a running deficit alongside.",
+      "risk": "A stronger sports identity; less visually quiet than the Apple direction.",
+      "html": ".impeccable/mocks/decision/editorial.html",
+      "htmlFrame": "1440x900",
+      "comp": ".impeccable/mocks/decision/editorial.png"
+    },
+    {
+      "id": "apple",
+      "kind": "grounded",
+      "label": "Apple Sports",
+      "thesis": "A team-first matchup, one clear answer, and a calm comparison list.",
+      "palette": ["#ffffff", "#f3f5f7", "#152e4f", "#ac811c"],
+      "materials": ["system typography", "controlled team colors", "native controls"],
+      "viewport": "The team matchup is central, with the turnover explanation and the full factor list below it.",
+      "risk": "The most restrained of the three; it has less editorial character.",
+      "html": ".impeccable/mocks/decision/apple.html",
+      "htmlFrame": "1440x900",
+      "comp": ".impeccable/mocks/decision/apple.png"
+    }
+  ],
+  "buildPath": {"value": "code", "toggle": true},
+  "canon": false,
+  "steer": true,
+  "reroll": false
+}
