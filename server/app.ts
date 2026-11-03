@@ -58,12 +58,19 @@ export function createApp(fetcher: typeof fetch = fetch) {
       res.json(await cached(`game:${req.params.id}`, async () => {
         const raw = await upstream(`${ESPN}/summary?event=${req.params.id}`);
         const data = detailFrom(raw);
-        return { data, ttl: data.state === 'post' ? 3_600_000 : 20_000 };
+        const complete = data.teams.every(t => t.stats && t.score === 2 * t.stats.fgm + t.stats.tpm + t.stats.ftm);
+        return { data, ttl: data.state === 'post' && complete ? 3_600_000 : 20_000 };
       }));
     } catch { res.status(502).json({ error: 'This box score isn’t available right now. Try refreshing or choose another game.' }); }
   });
   app.use('/api', (_req, res) => { res.status(404).json({ error: 'Endpoint not found.' }); });
-  app.use(express.static(path.resolve('dist'), { maxAge: '1h' }));
+  app.use(express.static(path.resolve('dist'), {
+    maxAge: '1h',
+    setHeaders(res, filePath) {
+      // Revalidate the HTML shell on deploy; hashed assets can stay cached.
+      if (filePath.endsWith('/index.html')) res.setHeader('Cache-Control', 'no-cache');
+    },
+  }));
   app.get('/', (_req, res) => { res.sendFile(path.resolve('dist/index.html')); });
   return app;
 }

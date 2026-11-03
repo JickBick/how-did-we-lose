@@ -49,7 +49,7 @@ The server reads ESPN’s public, unauthenticated NBA scoreboard and game-summar
 - `GET /api/games/:id`: normalized box score, cached 20 seconds for live/upcoming games and one hour for completed games.
 - `GET /api/health`: process health.
 
-The browser refreshes games and the selected box score every 30 seconds. ESPN itself may lag. Missing shooting lines and score/stat mismatches show a waiting state instead of a calculation.
+TanStack Query caches game views in the browser. The schedule and live or upcoming box scores refresh every 30 seconds; completed box scores are reused from the cache. Switching teams preserves the loaded game. ESPN itself may lag. Missing shooting lines and score/stat mismatches show a waiting state instead of a calculation.
 
 ## Method
 
@@ -77,6 +77,9 @@ The browser smoke check also exercises the real feed, what-if sliders, team swit
 
 ```sh
 TEST_URL=https://web-production-d45b8.up.railway.app node tests/browser-smoke.mjs
+TEST_URL=https://web-production-d45b8.up.railway.app node tests/design-smoke.mjs
 ```
 
-Built with React, TypeScript, Vite and Express. Fonts: DM Sans and Barlow Condensed (self-hosted). Team logos and game data are supplied by ESPN. This project is independent of the NBA and ESPN.
+Built with React, TypeScript, Vite and Express. The interface uses the platform system font, flat surfaces, and interruptible spring interactions through Motion. It supports dark mode, reduced motion, reduced transparency, and increased contrast. Team logos and game data are supplied by ESPN. This project is independent of the NBA and ESPN.
+
+The design pass uses the user-provided Apple interaction brief and the [UI Deslopify skill](https://github.com/AntonioSpagnol/UI-Deslopify-Skill). Loading placeholders match the game and analysis layout. On mobile, the methodology opens as a draggable sheet and a compact what-if balance stays visible while a scenario is active.

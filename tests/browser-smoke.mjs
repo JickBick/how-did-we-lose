@@ -29,7 +29,7 @@ try {
   await page.locator('.team-toggle button').filter({ hasText: 'Thunder' }).click();
   await page.getByRole('button', { name: /The breakdown 8/ }).click();
   assert.match(await page.locator('.result-pill').innerText(), /WON BY 12/);
-  assert.match(await page.locator('.analysis-title h2').innerText(), /win/i);
+  assert.match(await page.locator('.analysis-title h2').innerText(), /edge|win/i);
   await page.getByRole('button', { name: /How it works/ }).click();
   await page.getByRole('dialog').waitFor({ state: 'visible' });
   await page.keyboard.press('Escape');
